@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    const persons ={
+    //normal function refer execution contex
+        organization: 'Science',
+        people:['Jhane','Jhone'],
+        print: function (){
+        this.people.forEach(function (value){ //forEach is function to allow all the arrays.ForEach is a globalfunction
+            document.write(value,this.organization+'</br>');
+        });
+        }
+    };
+
+    /*
+    const persons ={
+     /*
+     //arrow function refer enclossing contex
+        organization: 'Science',
+        people:['Jhane','Jhone'],
+        print:function () {
+
+            this.people.forEach(value =>{ //forEach is function to allow all the arrays.ForEach is a globalfunction
+                document.write(value,this.organization+'</br>');
+            });
+        }
+    };
+*/
+    persons.print();
+    </script>
+
+</body>
+</html>

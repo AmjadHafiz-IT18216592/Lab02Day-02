@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+    function  getValue(callback){
+        let value = 0;
+
+
+        setTimeout( function (){
+            value = 10;
+
+        } , 1000);
+        return value;
+
+
+    }
+
+    document.write(getValue());
+*/
+    /*
+
+    //Callback-------------------------------------------------------
+    function  getValue(callback){
+        let value = 0;
+
+
+            setTimeout( function (){
+                value = 10;
+                callback(value);
+
+            } , 1000);
+
+
+    }
+
+    getValue(function (value){
+        document.write(value+'</br>');
+    });
+     */
+
+    /*
+    //Promisses-------------------------------------------------------
+    function  getValue(){
+        let value = 0;
+
+        return new Promise(function (resolve, reject){
+            setTimeout( function (){
+                value = 10;
+
+              resolve(value);
+
+            } , 1000);
+    });
+    }
+    getValue().then(function (value){
+        document.write("Inside resolve method"+'</br>');
+       document.write(value+'</br>');
+    });
+
+     */
+
+
+    //asyn and await-------------------------------------------------------
+
+    function  getValue(){
+        let value = 0;
+
+        return new Promise(function (resolve, reject){
+            setTimeout( function (){
+                value = 10;
+
+                resolve(value);
+
+            } , 1000);
+        });
+    }
+
+
+    async function print(){
+
+        let value = await  getValue();
+
+        return value;
+    }
+
+    print().then( function (value){
+        document.write(value+'</br>');
+    });
+
+</script>
+</body>
+</html>

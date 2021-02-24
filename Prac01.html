@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab practices</title>
+</head>
+<body>
+<script type="text/javascript">
+    //setTimeOut
+   /* function getValue(){
+        let num = 10;
+
+        setTimeout(function (){
+            num = num*num;
+        },1000);
+        return num;
+    }
+    document.write(getValue()+'</br>');
+   */
+
+    //callBack
+    /*
+    function getValue(callBack){
+        let num = 10;
+
+        setTimeout(function (){
+            num = num*num;
+            callBack(num);
+        },1000);
+    }
+
+    getValue(function (num){
+        document.write(num+'</br>');
+    });
+     */
+    //proisses
+    /*
+    function getValue(){
+        let num = 10;
+
+        return new Promise(function (resolve, reject){
+            setTimeout(function (){
+                num = num*num;
+                resolve(num);
+            },1000);
+        });
+    }
+
+    getValue().then(function (num){
+        document.write("Inside promiss "+'</br>');
+        document.write(num+'</br>');
+    });
+
+     */
+
+    //async and await
+
+   getValue=()=>{
+        let num = 10;
+
+        return new Promise(function (resolve, reject){
+            setTimeout(()=>{
+                num = (num*num)+1;
+                resolve(num);
+            },1000);
+        });
+    }
+
+    async function getNewvalue(){
+        let val = await getValue();
+        return val;
+    }
+   getNewvalue().then(num =>{
+       document.write("Inside New method "+'</br>');
+       document.write(num+'</br>');
+   });
+
+</script>
+</body>
+</html>
